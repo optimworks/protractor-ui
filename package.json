@@ -1,0 +1,24 @@
+{
+  "name": "com.protractor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "conf.js",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "jasmine-spec-reporter": "^7.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "protractor conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/optimworks/protractor-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/optimworks/protractor-ui/issues"
+  },
+  "homepage": "https://github.com/optimworks/protractor-ui#readme"
+}
