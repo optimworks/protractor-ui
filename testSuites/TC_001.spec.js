@@ -1,18 +1,15 @@
-var homePage = require('../locators/homepage')
-var URL = browser.baseURL
+var loginPage = require('../Pages/loginPage')
+var URL = browser.baseUrl
 
-describe('Launch Protractor App', function () {
+describe('Scrum Do App testing', function () {
 
     beforeAll(async () => {
         await browser.get(URL)
         await browser.driver.sleep(1000)
-        await browser.manage().window().maximize()
     })
 
-    it('Goto Protractor API', async () => {
-        await homePage.load()
-        await browser.manage().window().maximize()
-        await homePage.referenceDropdown()
-        await homePage.protractorAPI()
+    it('Login to application', async () => {
+        await loginPage.launchLoginPage()
+        await loginPage.verifyURL()
     })
 }) 
