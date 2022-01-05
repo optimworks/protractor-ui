@@ -5,7 +5,8 @@
   "main": "conf.js",
   "dependencies": {
     "colors": "^1.4.0",
-    "jasmine-spec-reporter": "^7.0.0"
+    "jasmine-spec-reporter": "^7.0.0",
+    "protractor": "^7.0.0"
   },
   "devDependencies": {},
   "scripts": {

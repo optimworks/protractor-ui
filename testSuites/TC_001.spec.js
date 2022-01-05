@@ -1,5 +1,8 @@
-var loginPage = require('../Pages/loginPage')
+var LoginPageLocators = require('../locators/loginPageLocators')
+var LoginPage = require('../Pages/loginPage')
 var URL = browser.baseUrl
+var credentials = require('../testSuites/testData.json')
+var statusNames = require('../testSuites/statusNames.json')
 
 describe('Scrum Do App testing', function () {
 
@@ -9,7 +12,20 @@ describe('Scrum Do App testing', function () {
     })
 
     it('Login to application', async () => {
-        await loginPage.launchLoginPage()
-        await loginPage.verifyURL()
+        await LoginPage.clickLoginButtonText()
+        await LoginPage.verifyURL()
+        await LoginPage.enterUsername(credentials.username)
+        await LoginPage.enterPassword(credentials.password)
+        await LoginPage.clickLoginButton()
+        await LoginPageLocators.waitForBoardName()
+        expect(LoginPageLocators.getBoardName().getText()).toEqual("Kanban Board")
     })
+
+    it('Add new statuses', async () => {
+        await LoginPage.enterStatusName(statusNames.statusName1)
+        await LoginPage.enterStatusName(statusNames.statusName2)
+        await LoginPage.enterStatusName(statusNames.statusName3)
+    })
+
+   
 }) 
